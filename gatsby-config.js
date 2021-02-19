@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "casecheck-frontend-test",
+    url: "https://data.cityofchicago.org/resource/cwig-ma7x.json"
   },
   plugins: [
     "gatsby-plugin-sass",
