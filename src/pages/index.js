@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react"
 import { graphql} from "gatsby"
-import axios from "axios"
+import axios from 'axios'
 
-import Layout from '../components'
+import { Layout } from '../components'
 
 const IndexPage = ({ data }) => {
 
@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Hello</h1>
+      <h1>Big Map</h1>
       
     </Layout>
   )
