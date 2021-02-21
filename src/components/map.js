@@ -1,6 +1,7 @@
 import React from 'react'
+import "./map.scss"
 
-const Map = () => {
+const Map = ({ data }) => {
 	return (
 		<section></section>
 	)

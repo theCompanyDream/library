@@ -2,25 +2,32 @@ import React, {useEffect, useState} from "react"
 import { graphql} from "gatsby"
 import axios from 'axios'
 
-import { Layout } from '../components'
+import { Layout, Form, Map } from '../components'
 
 const IndexPage = ({ data }) => {
 
   const [body, setState] = useState([])
 
   useEffect(() => {
-    // const fetchData = async (url) => {
-    //   const response = await axios.get(url);
-    //   setState(response.json())
-    // }
+    const fetchData = async () => {
+      await axios.get(data.site.siteMetadata.url).then( res => {
+        const payload = res.data;
+        setState(payload)
+      });
+    }
 
-    // fetchData(data.site.siteMetadata.url)
+    fetchData()
   }, [])
 
   return (
     <Layout>
       <h1>Big Map</h1>
-      
+
+      <Form />
+      <Map data={data}/>
+      <p>
+        
+      </p>
     </Layout>
   )
 }

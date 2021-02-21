@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import "./form.scss"
 
 const Form = () => {
+
+	const [form, setState] = useState({})
+
 	return ( 
 		<form>
-			<input />
+			<input type="text" />
 			
 		</form>
 	)
