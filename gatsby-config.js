@@ -7,7 +7,7 @@ module.exports = {
   },
   siteMetadata: {
     title: "casecheck-frontend-test",
-    siteUrl: 'https://gatsbystopbeingweird.com',
+    siteUrl: 'https://gatsbystopbeingweird.dev',
     url: "https://data.cityofchicago.org/resource/cwig-ma7x.json"
   },
   plugins: [
