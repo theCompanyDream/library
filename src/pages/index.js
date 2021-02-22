@@ -2,7 +2,10 @@ import React, {useEffect, useState} from "react"
 import { graphql} from "gatsby"
 import axios from 'axios'
 
-import { Layout, Map } from '../components'
+import { 
+  Layout, 
+  Map 
+} from '../components'
 
 const IndexPage = ({ data }) => {
 
