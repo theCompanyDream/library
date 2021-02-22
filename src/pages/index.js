@@ -23,6 +23,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <div className="columns">
         <div className="column">
+          <h1>I'm silly</h1>
           <Map data={body}/>
         </div>
       </div>
