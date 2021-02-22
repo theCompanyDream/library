@@ -12,7 +12,9 @@ import "./map.scss"
 
 const Map = ({ data }) => {
 	return (
-		<section className="section"></section>
+		<section className="column is-full">
+			
+		</section>
 	)
 }
  
