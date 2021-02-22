@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import { graphql} from "gatsby"
 import axios from 'axios'
 
-import { Layout, Form, Map } from '../components'
+import { Layout, Map } from '../components'
 
 const IndexPage = ({ data }) => {
 
@@ -21,13 +21,11 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Big Map</h1>
-
-      <Form />
-      <Map data={data}/>
-      <p>
-        
-      </p>
+      <div className="columns">
+        <div className="column">
+          <Map data={body}/>
+        </div>
+      </div>
     </Layout>
   )
 }

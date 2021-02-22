@@ -1,9 +1,9 @@
 import React from 'react'
 import "./detail.scss"
 
-const Detail = () => {
+const Detail = ({ location }) => {
 	return ( 
-		<section></section>
+		<section className="section"></section>
 	)
 }
  

@@ -14,5 +14,13 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    {
+      resolve: 'gatsby-plugin-html-minifier',
+      options: {
+          caseSensitive: false,
+          collapseBooleanAttributes: false,
+          useShortDoctype: false
+      }
+    },
   ],
 };

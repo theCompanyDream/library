@@ -3,7 +3,7 @@ import "./map.scss"
 
 const Map = ({ data }) => {
 	return (
-		<section></section>
+		<section className="section"></section>
 	)
 }
  
