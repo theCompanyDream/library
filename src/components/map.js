@@ -11,10 +11,15 @@ import Form from './form'
 import "./map.scss"
 
 const Map = ({ data }) => {
+
+
+
 	return (
-		<section className="column is-full">
+		<div className="columns">
+			<section className="column is-full">
 			
-		</section>
+			</section>
+		</div>
 	)
 }
  
