@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import "./styles/form.scss"
 
-const Form = () => {
+const Search = () => {
 
 	const [form, setState] = useState([])
 
@@ -16,4 +17,4 @@ const Form = () => {
 	)
 }
  
-export default Form
+export default Search

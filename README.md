@@ -42,6 +42,16 @@
 
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
+
+## Frameworks Used
+
+- React
+- Gatsby
+- Sass
+- Jest
+- [Bulma]()
+- [react-leaflet]
+
 ## Deployment
 
 This project is deployed on [Vercel](https://casecheck-test-8lr1h3oa4.vercel.app/) in case for some reason you can't get it working on your enviorment.

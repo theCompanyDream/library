@@ -1,5 +1,5 @@
 import React from 'react'
-import "./base.scss"
+import "./styles/base.scss"
 
 const Layout = ({ children }) => (
 	<div className="container">

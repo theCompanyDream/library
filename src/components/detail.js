@@ -1,9 +1,13 @@
 import React from 'react'
-import "./detail.scss"
+import "./styles/detail.scss"
 
 const Detail = ({ location }) => {
+
+	
 	return ( 
-		<section className="section"></section>
+		<section className="section">
+
+		</section>
 	)
 }
  
