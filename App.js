@@ -1,5 +1,9 @@
 import React, { useEffect, useState} from "react"
-import { Router, Link } from '@reach/router'
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
 import { graphql} from "gatsby"
 import axios from 'axios'
 
@@ -27,14 +31,14 @@ const IndexPage = ({ data }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await axios.get(data.site.siteMetadata.url).then( res => {
+      await axios.get(`https://data.cityofchicago.org/resource/cwig-ma7x.json`).then( res => {
         const payload = res.data;
         setState(payload)
       });
     }
 
     fetchData()
-  }, [data.site.siteMetadata.url])
+  }, [])
 
   return (
     <Layout>
@@ -58,6 +62,15 @@ export const query = graphql`
     site {
       siteMetadata {
         url
+      }
+    }
+
+    allDirectory(filter: { relativePath: { ne: "../components" } }) {
+      edges {
+        node {
+          relativePath
+          id
+        }
       }
     }
   }

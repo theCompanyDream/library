@@ -1,7 +1,0 @@
-node_modules/
-.cache/
-public
-
-# For Jupyter
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
