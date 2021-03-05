@@ -1,7 +1,6 @@
-import React, { useEffect, useState} from "react"
+import React, { Suspense, useEffect, useState} from "react"
 
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom"
@@ -15,24 +14,14 @@ const Detail = React.lazy(() => import('./components/detail'))
 const Map = React.lazy(() => import('./components/map'))
 const Search = React.lazy(() => import('./components/search'))
 
-const LazyComponent = ({ Component, ...props }) => (
-  <React.Suspense fallback={FallBackComp}>
-    <Component {...props} /> 
-  </React.Suspense>
-)
-
-const FallBackComp = (
-  <p>Loading ...</p>
-)
-
-const IndexPage = ({ data }) => {
+const App = () => {
 
   const [body, setState] = useState([])
   const [components, setComponents] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
-      await axios.get(`https://data.cityofchicago.org/resource/cwig-ma7x.json`).then( res => {
+      await axios.get(`https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep`).then( res => {
         const payload = res.data;
         setState(payload)
       });
@@ -42,28 +31,18 @@ const IndexPage = ({ data }) => {
   }, [])
 
   return (
-      <Router>
-        <Layout>
-          <Switch>
-              <Route path="/">
-                <Home path="/" />
-              </Route>
+    <Layout>
+      <Suspense fallback={<div>Loading ...</div>}>
+          <Route exact path="/" component={Home} />
 
-              <Route path="/search">
-                <LazyComponent Component={Search} path="search" />
-              </Route>
+          <Route path="/search" component={Search} />
 
-              <Route path="/detail">
-                <LazyComponent Component={Detail} path="detail" />
-              </Route>
+          <Route path="/detail"  component={Detail} />
 
-              <Route path="/map">
-                <LazyComponent Component={Map} path="map" />
-              </Route>
-          </Switch>
-        </Layout>
-      </Router>
+          <Route path="/map" component={Map} />
+      </Suspense>
+    </Layout>
   )
 }
 
-export default IndexPage
+export default App
