@@ -34,11 +34,8 @@ const App = () => {
     <Layout>
       <Suspense fallback={<div>Loading ...</div>}>
           <Route exact path="/" component={Home} />
-
           <Route path="/search" component={Search} />
-
           <Route path="/detail"  component={Detail} />
-
           <Route path="/map" component={Map} />
       </Suspense>
     </Layout>
