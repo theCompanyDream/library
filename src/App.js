@@ -1,9 +1,6 @@
 import React, { Suspense, useEffect, useState} from "react"
 
-import {
-  Switch,
-  Route
-} from "react-router-dom"
+import { Route } from "react-router-dom"
 
 import axios from 'axios'
 
