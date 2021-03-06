@@ -7,7 +7,7 @@ const Detail = ({ location }) => {
 	
 	return ( 
 		<section className="section">
-
+			<h1 className="title">Book Detail</h1>
 		</section>
 	)
 }

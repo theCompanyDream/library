@@ -11,8 +11,6 @@ import { Layout } from "./components"
 
 const Home = React.lazy(() => import('./components/home'))
 const Detail = React.lazy(() => import('./components/detail'))
-const Map = React.lazy(() => import('./components/map'))
-const Search = React.lazy(() => import('./components/search'))
 
 const App = () => {
 
@@ -34,9 +32,7 @@ const App = () => {
     <Layout>
       <Suspense fallback={<div>Loading ...</div>}>
           <Route exact path="/" component={Home} />
-          <Route path="/search" component={Search} />
           <Route path="/detail"  component={Detail} />
-          <Route path="/map" component={Map} />
       </Suspense>
     </Layout>
   )
