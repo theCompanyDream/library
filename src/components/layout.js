@@ -11,7 +11,7 @@ const Layout = ({ children }) => (
 				</Link>
 			</div>
 
-			<div class="navbar-end">
+			<div className="navbar-end">
 				<div className="navbar-item">
 					<div className="buttons">
 						<Link className="button is-primary" to="/detail">

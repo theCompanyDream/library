@@ -1,10 +1,8 @@
-import React, { Suspense, useEffect, useState} from "react"
+import React, { Suspense, useEffect, useState } from "react"
 
 import { Route } from "react-router-dom"
 
-import axios from 'axios'
-
-import { Layout } from "./components"
+import { Layout, BookContext } from "./components"
 
 const Home = React.lazy(() => import('./components/home'))
 const Detail = React.lazy(() => import('./components/detail'))
@@ -12,26 +10,26 @@ const Detail = React.lazy(() => import('./components/detail'))
 const App = () => {
 
   const [body, setState] = useState([])
-  const [components, setComponents] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
-      await axios.get(`https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep`).then( res => {
-        const payload = res.data;
-        setState(payload)
-      });
+      await fetch(`https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep`)
+        .then( res => res.json())
+        .then( data => setState(data));
     }
 
     fetchData()
-  }, [])
+  }, [setState])
 
   return (
-    <Layout>
-      <Suspense fallback={<div>Loading ...</div>}>
-          <Route exact path="/" component={Home} />
-          <Route path="/detail"  component={Detail} />
-      </Suspense>
-    </Layout>
+    <BookContext.Provider value={body}>
+      <Layout>
+        <Suspense fallback={<div>Loading ...</div>}>
+            <Route exact path="/" component={Home} data={body} />
+            <Route path="/detail"  component={Detail} />
+        </Suspense>
+      </Layout>
+    </BookContext.Provider>
   )
 }
 
