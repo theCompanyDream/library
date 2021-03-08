@@ -8,7 +8,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import "./styles/home.scss"
 
-const Home = (props) => {
+const Home = () => {
 
 	const data = useContext(BookContext)
 
@@ -32,18 +32,18 @@ const Home = (props) => {
 				</div>
 			</div>
 	
-			<div className="columns is-centered is-one-third">
+			<div className="section">
 				<h3 className="subtitle">All Books</h3>
 	
-				<ul className="column">
-					{data.items.map( book => (
-						<li key={book.id}>
-							<Link to="/detail">
-								<article class="message is-link">
-									<div class="message-body">
+				<ul className="booklist">
+					{data.items && data.items.map( book => (
+						<li className="column is-one-third" key={book.id}>
+							<Link to={`/detail?id=${book.id}`}>
+								<article className="message is-link">
+									<div className="message-body">
 										<ul>
 											<li>{book.volumeInfo.title}</li>
-											<li>Authors: {book.volumeInfo.authors.map(author => `${author},`)}</li>
+											<li>Authors: {book.volumeInfo.authors.map(author => `${author} `)}</li>
 											<li>Publisher:{book.volumeInfo.publishedDate}</li>
 											<li>Published Date:{book.volumeInfo.publishedDate}</li>
 										</ul>
