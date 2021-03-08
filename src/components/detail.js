@@ -38,7 +38,7 @@ const Detail = () => {
 				setState(true)
 			}
 		}
-	})
+	}, [search, data.items])
 
 	return ( 
 		<section className="section">
