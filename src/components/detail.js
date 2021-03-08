@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
 import { Link, useLocation, useHistory } from "react-router-dom"
-import DateTimePicker from 'react-datetime-picker'
 import queryString from 'query-string'
 
 import { BookContext } from './'
@@ -19,6 +18,8 @@ const Detail = () => {
 	const saveBook = (e) => {
 		const idx = data.items.findIndex(bookToken => bookToken.id === book.id)
 
+		console.log(idx)
+
 		if (idx) {
 			data.items[idx] = book
 		} else {
@@ -31,7 +32,7 @@ const Detail = () => {
 	useEffect(() => {
 		const parsed = queryString.parse(search)
 
-		if (parsed.id) {
+		if (parsed) {
 			const chosen_book = data.items.find((book) => book.id === parsed.id)
 			if (chosen_book) {
 				setBook(chosen_book)
@@ -81,7 +82,7 @@ const Detail = () => {
 					<div className="field">
 						<label className="label">Publish Date</label>
 						<div className="control">
-							<DateTimePicker onChange={setBook} value={book.volumeInfo.publishedDate} />
+							<input className="input" type="text" onChange={setBook} value={book.volumeInfo.publishedDate} />
 						</div>
 					</div>
 				</div>

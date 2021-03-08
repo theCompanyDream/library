@@ -9,9 +9,7 @@ const Detail = React.lazy(() => import('./components/detail'))
 
 const App = () => {
 
-  const [body, setState] = useState({
-
-  })
+  const [body, setState] = useState({})
 
   useLayoutEffect(() => {
     const fetchData = () => {
