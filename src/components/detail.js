@@ -32,7 +32,7 @@ const Detail = () => {
 	useEffect(() => {
 		const parsed = queryString.parse(search)
 
-		if (parsed) {
+		if (parsed.id) {
 			const chosen_book = data.items.find((book) => book.id === parsed.id)
 			if (chosen_book) {
 				setBook(chosen_book)
