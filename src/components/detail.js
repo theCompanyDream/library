@@ -18,8 +18,6 @@ const Detail = () => {
 	const saveBook = (e) => {
 		const idx = data.items.findIndex(bookToken => bookToken.id === book.id)
 
-		console.log(idx)
-
 		if (idx) {
 			data.items[idx] = book
 		} else {
