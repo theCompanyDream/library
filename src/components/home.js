@@ -43,7 +43,7 @@ const Home = () => {
 									<div className="message-body">
 										<ul>
 											<li>{book.volumeInfo.title}</li>
-											<li>Authors: {book.volumeInfo.authors.map(author => `${author} `)}</li>
+											<li>Authors: {book.volumeInfo.authors.map(author => `${author} `)}<br /></li>
 											<li>Publisher:{book.volumeInfo.publishedDate}</li>
 											<li>Published Date:{book.volumeInfo.publishedDate}</li>
 										</ul>

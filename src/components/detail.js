@@ -39,13 +39,13 @@ const Detail = () => {
 		}
 	}, [search, data.items])
 
-	return ( 
+	return (
 		<section className="section">
 			<h1 className="title">{isEdit ? "Edit Book": "Add Book"}</h1>
 
 			<div className="columns">
 				<div className="box column">
-					
+
 					<div className="field">
 						<label className="label">Title</label>
 						<div className="control">
@@ -93,5 +93,5 @@ const Detail = () => {
 		</section>
 	)
 }
- 
+
 export default Detail
