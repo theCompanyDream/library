@@ -8,6 +8,7 @@ import "./styles/detail.scss"
 const Detail = () => {
 
 	const [isEdit, setState] = useState(false)
+	let { id } = useParams();
 	const { search } = useLocation()
 	const history = useHistory()
 	const data = useContext(BookContext)

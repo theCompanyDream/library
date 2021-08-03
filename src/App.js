@@ -2,7 +2,7 @@ import React, { Suspense, useLayoutEffect, useState } from "react"
 
 import { Route } from "react-router-dom"
 
-import { Layout, BookContext, Home, Posts, comments } from "./components"
+import { Layout, BookContext } from "./components"
 
 const Home = React.lazy(() => import('./components/home'))
 const Detail = React.lazy(() => import('./components/detail'))
