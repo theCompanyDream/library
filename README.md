@@ -1,10 +1,26 @@
-# Kaplan
+# Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Book Library App is a simple, intuitive React application for managing a collection of books. It allows users to add new books to the library, view a list of all added books, and edit details of existing books. This application is built using Create React App and provides a straightforward interface for basic CRUD operations.
 
-## Available Scripts
+## Installing
+
+1. git clone git@github.com:theCompanyDream/library.git
+2. cd library
+3. yarn
+4. yarn start
+
+## Features
+
+- Add Book: Users can add new books to the library with details like title, author, and ISBN.
+- View Books: Users can view a list of all added books.
+- Edit Book: Users can edit the details of existing books.
+
+### Available Scripts
 
 In the project directory, you can run:
+
+Create React App - Used to bootstrap the development
+React - The web framework used
 
 ### `yarn start`
 
@@ -68,3 +84,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Authors
+
+Stop playing yall know who I am https://github.com/theCompanyDream.
+
+## Lincense
+
+This project is licensed under the [GNU License](LICENSE.md)- see the LICENSE file for details.
