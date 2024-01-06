@@ -6,7 +6,6 @@ import { BookContext } from './'
 import "./styles/detail.scss"
 
 const Detail = () => {
-
 	const [isEdit, setState] = useState(false)
 	let { id } = useParams();
 	const { search } = useLocation()
@@ -18,13 +17,11 @@ const Detail = () => {
 
 	const saveBook = (e) => {
 		const idx = data.items.findIndex(bookToken => bookToken.id === book.id)
-
 		if (idx) {
 			data.items[idx] = book
 		} else {
 			data.items.push(book)
 		}
-
 		history.push('/')
 	}
 
@@ -43,40 +40,33 @@ const Detail = () => {
 	return (
 		<section className="section">
 			<h1 className="title">{isEdit ? "Edit Book": "Add Book"}</h1>
-
-			<div className="columns">
+			<section className="columns">
 				<div className="box column">
-
 					<div className="field">
 						<label className="label">Title</label>
 						<div className="control">
 							<input className="input" type="text" placeholder="Name" value={book.volumeInfo.title} />
 						</div>
 					</div>
-
 					<div className="field">
 						<label className="label">SubTitle</label>
 						<div className="control">
-							<textarea className="textarea" value={book.volumeInfo.subtitle} placeholder="subtitle"></textarea>
+							<input className="input" value={book.volumeInfo.subtitle} placeholder="subtitle" />
 						</div>
 					</div>
-
 					<div className="field">
 						<label className="label">Authors</label>
 						<div className="control">
 							<input className="input" type="text" placeholder="Name" value={book.volumeInfo.authors} />
 						</div>
 					</div>
-
 					<div className="field">
 						<label className="label">Description</label>
 						<div className="control">
 							<textarea className="textarea" value={book.volumeInfo.description} placeholder="subtitle"></textarea>
 						</div>
 					</div>
-
 				</div>
-
 				<div className="box column">
 					<div className="field">
 						<label className="label">Publish Date</label>
@@ -85,12 +75,11 @@ const Detail = () => {
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div className="box">
-				<button className="button" onClick={saveBook}>Save</button>
+			</section>
+			<section className="box">
 				<Link className="button" to="/">Back</Link>
-			</div>
+				<button className="button" onClick={saveBook}>Next</button>
+			</section>
 		</section>
 	)
 }
