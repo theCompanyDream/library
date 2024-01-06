@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { Link, useLocation, useHistory } from "react-router-dom"
+import { Link, useLocation, useHistory, useParams } from "react-router-dom"
 import queryString from 'query-string'
 
 import { BookContext } from './'
