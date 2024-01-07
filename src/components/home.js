@@ -11,13 +11,6 @@ import "./styles/home.scss"
 const Home = () => {
 
 	const data = useContext(BookContext)
-
-	const [filters, setFilters] = useState({
-		name: '',
-		author: '',
-		publisher: ''
-	})
-
 	return (
 		<section className="section is-centered">
 
