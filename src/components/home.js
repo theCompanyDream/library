@@ -18,9 +18,9 @@ const Home = () => {
 		publisher: ''
 	})
 
-	return ( 
+	return (
 		<section className="section is-centered">
-	
+
 			<div className="columns">
 				<div className="field column is-one-third">
 					<p className="control has-icons-left has-icons-right">
@@ -31,10 +31,10 @@ const Home = () => {
 					</p>
 				</div>
 			</div>
-	
+
 			<div className="section">
 				<h3 className="subtitle">All Books</h3>
-	
+
 				<ul className="booklist">
 					{data.items && data.items.map( book => (
 						<li className="column is-one-third" key={book.id}>
@@ -44,8 +44,8 @@ const Home = () => {
 										<ul>
 											<li>{book.volumeInfo.title}</li>
 											<li>Authors: {book.volumeInfo.authors.map(author => `${author} `)}<br /></li>
-											<li>Publisher:{book.volumeInfo.publishedDate}</li>
-											<li>Published Date:{book.volumeInfo.publishedDate}</li>
+											<li>Publisher: {book.volumeInfo.publisher}</li>
+											<li>Published Date: {book.volumeInfo.publishedDate}</li>
 										</ul>
 									</div>
 								</article>
@@ -54,9 +54,9 @@ const Home = () => {
 					))}
 				</ul>
 			</div>
-	
+
 		</section>
 	)
 }
- 
+
 export default Home

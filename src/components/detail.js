@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { Link, useLocation, useHistory, useParams } from "react-router-dom"
+import { Link, useLocation, useHistory } from "react-router-dom"
 import queryString from 'query-string'
 
 import { BookContext } from './'
@@ -7,12 +7,17 @@ import "./styles/detail.scss"
 
 const Detail = () => {
 	const [isEdit, setState] = useState(false)
-	let { id } = useParams();
 	const { search } = useLocation()
 	const history = useHistory()
 	const data = useContext(BookContext)
 	const [book, setBook] = useState({
-		volumeInfo: {}
+		volumeInfo: {
+			title: '',
+			description: '',
+			subtitle: '',
+			authors: '',
+			publishedDate: ''
+		}
 	})
 
 	const saveBook = (e) => {
@@ -25,9 +30,12 @@ const Detail = () => {
 		history.push('/')
 	}
 
+	const handleChange = (e) => {
+		setBook({...book.volumeInfo, [e.target.name]: e.target.value})
+	}
+
 	useEffect(() => {
 		const parsed = queryString.parse(search)
-
 		if (parsed.id) {
 			const chosen_book = data.items.find((book) => book.id === parsed.id)
 			if (chosen_book) {
@@ -45,40 +53,46 @@ const Detail = () => {
 					<div className="field">
 						<label className="label">Title</label>
 						<div className="control">
-							<input className="input" type="text" placeholder="Name" value={book.volumeInfo.title} />
+							<input className="input" type="text" name="title" value={book.volumeInfo.title || ''} onChange={handleChange} />
 						</div>
 					</div>
 					<div className="field">
 						<label className="label">SubTitle</label>
 						<div className="control">
-							<input className="input" value={book.volumeInfo.subtitle} placeholder="subtitle" />
+							<input className="input" name="subtitle" value={book.volumeInfo.subtitle || ''} onChange={handleChange} />
 						</div>
 					</div>
 					<div className="field">
 						<label className="label">Authors</label>
 						<div className="control">
-							<input className="input" type="text" placeholder="Name" value={book.volumeInfo.authors} />
+							<input className="input" name="authors" type="text" value={book.volumeInfo.authors || ''} onChange={handleChange} />
 						</div>
 					</div>
 					<div className="field">
 						<label className="label">Description</label>
 						<div className="control">
-							<textarea className="textarea" value={book.volumeInfo.description} placeholder="subtitle"></textarea>
+							<textarea className="textarea" name="description" value={book.volumeInfo.description || ''} onChange={handleChange}></textarea>
 						</div>
 					</div>
 				</div>
 				<div className="box column">
 					<div className="field">
+						<label className="label">Publisher</label>
+						<div className="control">
+							<input className="input" type="text" name="publisher" value={book.volumeInfo.publisher || ''} onChange={handleChange} />
+						</div>
+					</div>
+					<div className="field">
 						<label className="label">Publish Date</label>
 						<div className="control">
-							<input className="input" type="text" onChange={setBook} value={book.volumeInfo.publishedDate} />
+							<input className="input" type="text" name="publishedDate" value={book.volumeInfo.publishedDate || ''} onChange={handleChange} />
 						</div>
 					</div>
 				</div>
 			</section>
 			<section className="box">
 				<Link className="button" to="/">Back</Link>
-				<button className="button" onClick={saveBook}>Next</button>
+				<button className="button" onClick={saveBook}>Save</button>
 			</section>
 		</section>
 	)
