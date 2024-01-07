@@ -31,7 +31,7 @@ const Detail = () => {
 	}
 
 	const handleChange = (e) => {
-		setBook({...book.volumeInfo, [e.target.name]: e.target.value})
+		setBook({...book.volumeInfo, volumeInfo: {...book.volumeInfo, [e.target.name]: e.target.value}})
 	}
 
 	useEffect(() => {
