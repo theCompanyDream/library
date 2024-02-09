@@ -9,7 +9,11 @@ const App = () => {
   const [body, setState] = useState({})
   useLayoutEffect(() => {
     const fetchData = () => {
-      fetch(`https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep`)
+      fetch(`https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep`, {
+        mode: "cors",
+        credentials: "include",
+				referrerPolicy: "no-referrer-when-downgrade",
+      })
           .then( res => res.json())
           .then( data => {
               setState({...data})
